@@ -248,8 +248,13 @@ public class GTCXRecipeMods {
         GTCXIc2cECompat.addOreWashingMachineRecipe("crushed" + main.getDisplayName(), 1, GTCXMaterialGen.getPurifiedCrushedOre(main, 1), outputWashSide, GTMaterialGen.getModItem(GTValues.MOD_ID_IC2_EXTRAS, "stonedust"));
         GTCXIc2cECompat.addThermalCentrifugeRecipe("crushedPurified" + main.getDisplayName(), 1, 400, GTMaterialGen.getDust(main, 1), outputThermalSide);
         GTCXIc2cECompat.addThermalCentrifugeRecipe("crushed" + main.getDisplayName(), 1, 600, GTMaterialGen.getDust(main, 1), outputThermalSide, GTMaterialGen.getModItem(GTValues.MOD_ID_IC2_EXTRAS, "stonedust"));
-        TileEntityMacerator.addRecipe("crushed" + main.getDisplayName(), 1, GTMaterialGen.getDust(main, 1));
-        TileEntityMacerator.addRecipe("crushedPurified" + main.getDisplayName(), 1, GTMaterialGen.getDust(main, 1));
+        if (GTHelperStack.getStackFromOreDict("dustDirty" + main.getDisplayName()) != null && GTCXConfiguration.modcompat.compatMekanism) {
+        	TileEntityMacerator.addRecipe("crushed" + main.getDisplayName(), 1, GTHelperStack.getStackFromOreDict("dustDirty" + main.getDisplayName()));
+        	TileEntityMacerator.addRecipe("crushedPurified" + main.getDisplayName(), 1, GTHelperStack.getStackFromOreDict("dustDirty" + main.getDisplayName()));
+        }else {
+        	TileEntityMacerator.addRecipe("crushed" + main.getDisplayName(), 1, GTMaterialGen.getDust(main, 1));
+        	TileEntityMacerator.addRecipe("crushedPurified" + main.getDisplayName(), 1, GTMaterialGen.getDust(main, 1));
+        }
     }
     
     public static void addDirtyDustRecipe(String input, ItemStack output1, ItemStack output2, int EU) {
