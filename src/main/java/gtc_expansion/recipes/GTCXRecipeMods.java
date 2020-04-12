@@ -10,6 +10,7 @@ import gtc_expansion.tile.GTCXTileWiremill;
 import gtc_expansion.tile.multi.GTCXTileMultiIndustrialBlastFurnace;
 import gtc_expansion.tile.multi.GTCXTileMultiPrimitiveBlastFurnace;
 import gtc_expansion.util.GTCXIc2cECompat;
+import gtclassic.api.helpers.GTHelperStack;
 import gtclassic.api.helpers.GTValues;
 import gtclassic.api.material.GTMaterial;
 import gtclassic.api.material.GTMaterialGen;
@@ -30,6 +31,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 import static gtclassic.common.recipe.GTRecipeMods.input;
 import static gtclassic.common.recipe.GTRecipeMods.metal;
@@ -210,8 +212,53 @@ public class GTCXRecipeMods {
             GTCXTileWiremill.addRecipe(GTRecipeCraftingHandler.combineRecipeObjects("nuggetTungsten", "nuggetTitanium"), GTMaterialGen.getModItem("railcraft", "track_parts", 2));
             GTCXTileWiremill.addRecipe("nuggetTungstensteel", 1, GTMaterialGen.getModItem("railcraft", "track_parts", 3));
         }
+        if (OreDictionary.doesOreNameExist("clusterCopper") && GTCXConfiguration.modcompat.compatThaumcraft) {
+        	addClusterRecipe("Tungsten", GTCXMaterialGen.getCrushedOre(GTMaterial.Tungsten, 3));
+        	addClusterRecipe("Chrome", GTCXMaterialGen.getCrushedOre(GTCXMaterial.Chromite, 3));
+        	addClusterRecipe("Bauxite", GTCXMaterialGen.getCrushedOre(GTMaterial.Bauxite, 3));
+        	addClusterRecipe("Galena", GTCXMaterialGen.getCrushedOre(GTCXMaterial.Galena, 3));
+        	addClusterRecipe("Pyrite", GTCXMaterialGen.getCrushedOre(GTMaterial.Pyrite, 3));
+        	addClusterRecipe("Sphalerite", GTCXMaterialGen.getCrushedOre(GTCXMaterial.Sphalerite, 3));
+        	addClusterRecipe("Cassiterite", GTCXMaterialGen.getCrushedOre(GTCXMaterial.Cassiterite, 3));
+        	addClusterRecipe("Cinnabar", GTCXMaterialGen.getCrushedOre(GTCXMaterial.Cinnabar, 3));
+        	addClusterRecipe("Iridium", GTCXMaterialGen.getCrushedOre(GTMaterial.Iridium, 3));
+        	addClusterRecipe("Tetrahedrite", GTCXMaterialGen.getCrushedOre(GTCXMaterial.Tetrahedrite, 3));
+        	addClusterRecipe("Iron", 3);
+        	addClusterRecipe("Gold", 3);
+        	addClusterRecipe("Copper", 3);
+        	addClusterRecipe("Tin", 3);
+        	addClusterRecipe("Silver", 3);
+        	addClusterRecipe("Lead", 3);
+        	addClusterRecipe("Uranium", 3);
+        	addClusterRecipe("Nickel", 3);
+        	addClusterRecipe("Aluminium", 3);
+        	addClusterRecipe("Platinum", 3);
+        	addClusterRecipe("Cinnabar", 3);
+        	addClusterRecipe("Cobalt", 3);
+        	//MMD+JAOPCA Compat
+        	addClusterRecipe("Adamantine", 3);
+        	addClusterRecipe("Antimony", 3);
+        	addClusterRecipe("Beryllium", 3);
+        	addClusterRecipe("Bismuth", 3);
+        	addClusterRecipe("Boron", 3);
+        	addClusterRecipe("Cadmium", 3);
+        	addClusterRecipe("Chrome", 3);
+        	addClusterRecipe("Coldiron", 3);
+        	addClusterRecipe("Magnesium", 3);
+        	addClusterRecipe("Manganese", 3);
+        	addClusterRecipe("Mercury", 3);
+        	addClusterRecipe("Plutonium", 3);
+        	addClusterRecipe("Rutile", 3);
+        	addClusterRecipe("Starsteel", 3);
+        	addClusterRecipe("Tantalum", 3);
+        	addClusterRecipe("Thorium", 3);
+        	addClusterRecipe("Titanium", 3);
+        	addClusterRecipe("Tungsten", 3);
+        	addClusterRecipe("Zinc", 3);
+        	addClusterRecipe("Zirconium", 3);
+        }
+    
     }
-
     public static void addCrushedOreRecipes(GTMaterial main, ItemStack outputWashSide, ItemStack outputThermalSide){
         GTCXIc2cECompat.addOreWashingMachineRecipe("crushed" + main.getDisplayName(), 1, GTCXMaterialGen.getPurifiedCrushedOre(main, 1), outputWashSide, GTMaterialGen.getModItem(GTValues.MOD_ID_IC2_EXTRAS, "stonedust"));
         GTCXIc2cECompat.addThermalCentrifugeRecipe("crushedPurified" + main.getDisplayName(), 1, 400, GTMaterialGen.getDust(main, 1), outputThermalSide);
@@ -219,7 +266,21 @@ public class GTCXRecipeMods {
         TileEntityMacerator.addRecipe("crushed" + main.getDisplayName(), 1, GTMaterialGen.getDust(main, 1));
         TileEntityMacerator.addRecipe("crushedPurified" + main.getDisplayName(), 1, GTMaterialGen.getDust(main, 1));
     }
+    
+    public static void addClusterRecipe(String input, ItemStack output) {
+    	if (GTHelperStack.getStackFromOreDict("cluster" + input) != null) {
+    		TileEntityMacerator.addRecipe("cluster" + input, 1, output);
+    	}
+    }
 
+    public static void addClusterRecipe(String input, int output) {
+    	ItemStack output1 = GTHelperStack.getStackFromOreDict("crushed" + input);
+    	output1.setCount(output);
+    	if (output1 != null && GTHelperStack.getStackFromOreDict("cluster" + input) != null) {
+    		TileEntityMacerator.addRecipe("cluster" + input, 1, output1);
+    	}
+    }
+    
     public static ICraftingRecipeList recipes = ClassicRecipes.advCrafting;
 
 }
