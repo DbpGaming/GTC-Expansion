@@ -242,7 +242,6 @@ public class GTCXRecipeMods {
         	addClusterRecipe("Bismuth", 3);
         	addClusterRecipe("Boron", 3);
         	addClusterRecipe("Cadmium", 3);
-        	addClusterRecipe("Chrome", 3);
         	addClusterRecipe("Coldiron", 3);
         	addClusterRecipe("Magnesium", 3);
         	addClusterRecipe("Manganese", 3);
@@ -253,7 +252,6 @@ public class GTCXRecipeMods {
         	addClusterRecipe("Tantalum", 3);
         	addClusterRecipe("Thorium", 3);
         	addClusterRecipe("Titanium", 3);
-        	addClusterRecipe("Tungsten", 3);
         	addClusterRecipe("Zinc", 3);
         	addClusterRecipe("Zirconium", 3);
         }
