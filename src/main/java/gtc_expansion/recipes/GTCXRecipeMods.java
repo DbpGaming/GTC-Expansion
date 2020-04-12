@@ -10,6 +10,7 @@ import gtc_expansion.tile.GTCXTileWiremill;
 import gtc_expansion.tile.multi.GTCXTileMultiIndustrialBlastFurnace;
 import gtc_expansion.tile.multi.GTCXTileMultiPrimitiveBlastFurnace;
 import gtc_expansion.util.GTCXIc2cECompat;
+import gtclassic.api.helpers.GTHelperStack;
 import gtclassic.api.helpers.GTValues;
 import gtclassic.api.material.GTMaterial;
 import gtclassic.api.material.GTMaterialGen;
@@ -184,6 +185,9 @@ public class GTCXRecipeMods {
             GTCXTileAlloySmelter.addRecipe("dustLumium", 1, "blockGlassHardened", 2, GTMaterialGen.getModMetaItem(GTValues.MOD_ID_THERMAL, "glass_alloy", 6, 2));
             GTCXTileAlloySmelter.addRecipe("dustEnderium", 1, "blockGlassHardened", 2, GTMaterialGen.getModMetaItem(GTValues.MOD_ID_THERMAL, "glass_alloy", 7, 2));
         }
+        if (GTConfig.modcompat.compatThermal){
+        	addBlastingDustToIngot("Enderium", 1700, 72000);
+        }
         if (Loader.isModLoaded("gravisuit") && GTCXConfiguration.modcompat.compatGravisuit){
             GTRecipeCraftingHandler.overrideGTRecipe("gravisuit", "shaped_item.advanceddiamondchainsaw_-416372460", GTMaterialGen.getModItem("gravisuit", "advancedchainsaw"), " SS", "SCS", "BS ", 'S', GTCXRecipe.tungstenSteel, 'C', GTCXItems.diamondChainsaw, 'B', GTItems.lithiumBattery);
             GTRecipeCraftingHandler.overrideGTRecipe("gravisuit", "shaped_item.advanceddrill_1408250051", GTMaterialGen.getModItem("gravisuit", "advanceddrill"), " S ", "SDS", "SBS", 'S', GTCXRecipe.tungstenSteel, 'D', Ic2Items.diamondDrill, 'B', GTItems.lithiumBattery);
@@ -218,6 +222,13 @@ public class GTCXRecipeMods {
         GTCXIc2cECompat.addThermalCentrifugeRecipe("crushed" + main.getDisplayName(), 1, 600, GTMaterialGen.getDust(main, 1), outputThermalSide, GTMaterialGen.getModItem(GTValues.MOD_ID_IC2_EXTRAS, "stonedust"));
         TileEntityMacerator.addRecipe("crushed" + main.getDisplayName(), 1, GTMaterialGen.getDust(main, 1));
         TileEntityMacerator.addRecipe("crushedPurified" + main.getDisplayName(), 1, GTMaterialGen.getDust(main, 1));
+    }
+    
+    public static void addBlastingDustToIngot(String name, int heat, int eu) {
+    	ItemStack output = GTHelperStack.getStackFromOreDict("ingot" + name);
+    	if (GTHelperStack.getStackFromOreDict("dust" + name) != null && output != null) {
+    		GTCXTileMultiIndustrialBlastFurnace.addRecipe(new IRecipeInput[] { input("dust" + name, 1)}, heat, eu, output);
+    	}
     }
 
     public static ICraftingRecipeList recipes = ClassicRecipes.advCrafting;
