@@ -221,22 +221,26 @@ public class GTCXRecipeMods {
         	addDirtyDustRecipe("Silver", GTMaterialGen.getIc2(Ic2Items.silverDust, 1), GTCXMaterialGen.getSmallDust(GTMaterial.Sulfur, 1), 4280);
         	addDirtyDustRecipe("Lead", GTMaterialGen.getDust(GTCXMaterial.Lead, 1), GTCXMaterialGen.getSmallDust(GTMaterial.Sulfur, 1), 8280);
         	addDirtyDustRecipe("Platinum", GTMaterialGen.getDust(GTMaterial.Platinum, 1), GTCXMaterialGen.getSmallDust(GTMaterial.Nickel, 1), 7800);
-        	addDirtyDustRecipe("Iridium",  GTMaterialGen.getDust(GTMaterial.Iridium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Osmium, 1), 7680);
-        	addDirtyDustRecipe("Tungsten",  GTMaterialGen.getDust(GTMaterial.Tungsten, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Manganese, 1), 2240);
-        	addDirtyDustRecipe("Nickel",  GTMaterialGen.getDust(GTMaterial.Nickel, 1), GTCXMaterialGen.getSmallDust(GTMaterial.Platinum, 1), 2320);
-        	addDirtyDustRecipe("Zinc",  GTMaterialGen.getDust(GTCXMaterial.Zinc, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Tin, 1), 2600);
-        	addDirtyDustRecipe("Aluminium",  GTMaterialGen.getDust(GTMaterial.Aluminium, 1), GTCXMaterialGen.getSmallDust(GTMaterial.Bauxite, 1), 1040);
-        	addDirtyDustRecipe("Plutonium",  GTMaterialGen.getDust(GTMaterial.Plutonium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Lead, 1), 9840);
-        	addDirtyDustRecipe("Thorium",  GTMaterialGen.getDust(GTMaterial.Thorium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Lead, 1), 9200);
-        	addDirtyDustRecipe("Titanium",  GTMaterialGen.getDust(GTMaterial.Titanium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Almandine, 1), 1920);
-        	addDirtyDustRecipe("Uranium",  GTMaterialGen.getDust(GTMaterial.Uranium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Lead, 1), 9520);
+        	addDirtyDustRecipe("Iridium", GTMaterialGen.getDust(GTMaterial.Iridium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Osmium, 1), 7680);
+        	addDirtyDustRecipe("Tungsten", GTMaterialGen.getDust(GTMaterial.Tungsten, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Manganese, 1), 2240);
+        	addDirtyDustRecipe("Nickel", GTMaterialGen.getDust(GTMaterial.Nickel, 1), GTCXMaterialGen.getSmallDust(GTMaterial.Platinum, 1), 2320);
+        	addDirtyDustRecipe("Zinc", GTMaterialGen.getDust(GTCXMaterial.Zinc, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Tin, 1), 2600);
+        	addDirtyDustRecipe("Aluminium", GTMaterialGen.getDust(GTMaterial.Aluminium, 1), GTCXMaterialGen.getSmallDust(GTMaterial.Bauxite, 1), 1040);
+        	addDirtyDustRecipe("Plutonium", GTMaterialGen.getDust(GTMaterial.Plutonium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Lead, 1), 9840);
+        	addDirtyDustRecipe("Thorium", GTMaterialGen.getDust(GTMaterial.Thorium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Lead, 1), 9200);
+        	addDirtyDustRecipe("Titanium", GTMaterialGen.getDust(GTMaterial.Titanium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Almandine, 1), 1920);
+        	addDirtyDustRecipe("Uranium", GTMaterialGen.getDust(GTMaterial.Uranium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Lead, 1), 9520);
         	
         	//Special
-        	addDirtyDustRecipe("Antimony",  GTMaterialGen.getDust(GTCXMaterial.Antimony, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Iron, 1), 4840);
-        	addDirtyDustRecipe("Chrome",  GTMaterialGen.getDust(GTMaterial.Chrome, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Magnesium, 1), 2080);
-        	addDirtyDustRecipe("Magnesium",  GTMaterialGen.getDust(GTCXMaterial.Magnesium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Olivine, 1), 960);
-        	addDirtyDustRecipe("Manganese",  GTMaterialGen.getDust(GTCXMaterial.Manganese, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Iron, 1), 2200);
-
+        	addDirtyDustRecipe("Antimony", GTMaterialGen.getDust(GTCXMaterial.Antimony, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Iron, 1), 4840);
+        	addDirtyDustRecipe("Chrome", GTMaterialGen.getDust(GTMaterial.Chrome, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Magnesium, 1), 2080);
+        	addDirtyDustRecipe("Magnesium", GTMaterialGen.getDust(GTCXMaterial.Magnesium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Olivine, 1), 960);
+        	addDirtyDustRecipe("Manganese", GTMaterialGen.getDust(GTCXMaterial.Manganese, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Iron, 1), 2200);
+        	addDirtyDustRecipe("Beryllium", GTCXMaterialGen.getSmallDust(GTMaterial.Emerald, 1), 360);
+        	addDirtyDustRecipe("Boron", null, 400);//needs byproduct
+        	addDirtyDustRecipe("Bismuth", GTCXMaterialGen.getSmallDust(GTCXMaterial.Antimony, 1), 8320);
+        	addDirtyDustRecipe("Cadmium", GTCXMaterialGen.getSmallDust(GTCXMaterial.Sphalerite, 1), 4640);
+        	addDirtyDustRecipe("Rutile", GTCXMaterialGen.getSmallDust(GTMaterial.Titanium, 1), 2400);
         }
     }
 
