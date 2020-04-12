@@ -230,17 +230,21 @@ public class GTCXRecipeMods {
         	addDirtyDustRecipe("Thorium", GTMaterialGen.getDust(GTMaterial.Thorium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Lead, 1), 9200);
         	addDirtyDustRecipe("Titanium", GTMaterialGen.getDust(GTMaterial.Titanium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Almandine, 1), 1920);
         	addDirtyDustRecipe("Uranium", GTMaterialGen.getDust(GTMaterial.Uranium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Lead, 1), 9520);
-        	
-        	//Special
         	addDirtyDustRecipe("Antimony", GTMaterialGen.getDust(GTCXMaterial.Antimony, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Iron, 1), 4840);
         	addDirtyDustRecipe("Chrome", GTMaterialGen.getDust(GTMaterial.Chrome, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Magnesium, 1), 2080);
         	addDirtyDustRecipe("Magnesium", GTMaterialGen.getDust(GTCXMaterial.Magnesium, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Olivine, 1), 960);
         	addDirtyDustRecipe("Manganese", GTMaterialGen.getDust(GTCXMaterial.Manganese, 1), GTCXMaterialGen.getSmallDust(GTCXMaterial.Iron, 1), 2200);
+        	//Grab Output by oredict
         	addDirtyDustRecipe("Beryllium", GTCXMaterialGen.getSmallDust(GTMaterial.Emerald, 1), 360);
-        	addDirtyDustRecipe("Boron", null, 400);//needs byproduct
+        	addDirtyDustRecipe("Boron", GTCXMaterialGen.getSmallDust(GTCXMaterial.Iron, 1), 400);
         	addDirtyDustRecipe("Bismuth", GTCXMaterialGen.getSmallDust(GTCXMaterial.Antimony, 1), 8320);
         	addDirtyDustRecipe("Cadmium", GTCXMaterialGen.getSmallDust(GTCXMaterial.Sphalerite, 1), 4640);
-        	addDirtyDustRecipe("Rutile", GTCXMaterialGen.getSmallDust(GTMaterial.Titanium, 1), 2400);
+        	addDirtyDustRecipe("Rutile", GTCXMaterialGen.getSmallDust(GTMaterial.Titanium, 1), 8200);
+        	addDirtyDustRecipe("Draconium", GTCXMaterialGen.getSmallDust(GTMaterial.Iridium, 1), 12400);
+        	addDirtyDustRecipe("Yellorium", GTCXMaterialGen.getSmallDust(GTCXMaterial.Lead, 1), 9450);
+        	//Grab all Outputs by oredict
+        	addDirtyDustRecipe("Cobalt", "Cobalt", 2240);
+        	addDirtyDustRecipe("Mithril", "Nikolite", 3450);
         }
     }
 
@@ -266,6 +270,14 @@ public class GTCXRecipeMods {
     public static void addDirtyDustRecipe(String input, ItemStack output2, int EU) {
     	ItemStack output1 = GTHelperStack.getStackFromOreDict("dust" + input);
     	if (GTHelperStack.getStackFromOreDict("dustDirty" + input) != null && output1 != null) {
+        	GTTileCentrifuge.addRecipe("dustDirty"+ input, 1, 0, GTTileCentrifuge.totalEu(EU), output1, output2);
+        }
+	}
+    
+    public static void addDirtyDustRecipe(String input, String output, int EU) {
+    	ItemStack output1 = GTHelperStack.getStackFromOreDict("dust" + input);
+    	ItemStack output2 = GTHelperStack.getStackFromOreDict("dustSmall" + output);
+    	if (GTHelperStack.getStackFromOreDict("dustDirty" + input) != null && output1 != null && output2 != null) {
         	GTTileCentrifuge.addRecipe("dustDirty"+ input, 1, 0, GTTileCentrifuge.totalEu(EU), output1, output2);
         }
 	}
