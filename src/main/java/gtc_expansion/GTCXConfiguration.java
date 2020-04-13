@@ -141,5 +141,7 @@ public class GTCXConfiguration {
         public boolean compatGravisuit = true;
         public boolean compatRailcraft = true;
 		public boolean compatDraconic = true;
+		public boolean compatModularPowersuits = true;
+		public boolean compatModularPowersuitsRemoveVanillaRecipes = false;
     }
 }

@@ -231,6 +231,66 @@ public class GTCXRecipeMods {
         if (GTCXConfiguration.modcompat.compatDraconic){
         	addBlastingDustToIngot("Draconium", 1700, 72000);
         }
+        if (GTCXConfiguration.modcompat.compatModularPowersuits){
+        	recipes.addRecipe(GTMaterialGen.getModItem("powersuits", "powerarmor_head"), "ADA", "MCM", 'A', "plateAluminium", 'D', GTValues.CIRCUIT_DATA, 'M', GTMaterialGen.get(GTCXItems.machineParts), 'C', GTMaterialGen.get(GTCXItems.computerMonitor));
+        	recipes.addRecipe(GTMaterialGen.getModItem("powersuits", "powerarmor_torso"), "A A", "AMA", "ADA", 'A', "plateAluminium", 'D', GTValues.CIRCUIT_DATA, 'M', GTMaterialGen.get(GTCXItems.machineParts));
+        	recipes.addRecipe(GTMaterialGen.getModItem("powersuits", "powerarmor_legs"), "MDM", "A A", "A A", 'A', "plateAluminium", 'D', GTValues.CIRCUIT_DATA, 'M', GTMaterialGen.get(GTCXItems.machineParts));
+        	recipes.addRecipe(GTMaterialGen.getModItem("powersuits", "powerarmor_feet"), "D D", "A A", 'A', "plateAluminium", 'D', GTValues.CIRCUIT_DATA);
+        	recipes.addRecipe(GTMaterialGen.getModItem("powersuits", "powerarmor_fist"), " A ", "AM ", " DA", 'A', "plateAluminium", 'D', GTValues.CIRCUIT_DATA, 'M', GTMaterialGen.get(GTCXItems.machineParts));
+        	recipes.addRecipe(GTMaterialGen.getModItem("powersuits", "powerarmorcomponent"), " C ", "CSC", " C ", 'S', GTValues.INGOT_SILVER, 'C', Ic2Items.copperCable);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 1, 1), "CIC", "CIC", "CIC", 'I', GTValues.INGOT_INVAR, 'C', "componentWiring");
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 2, 1), "SBS", "ACA", "SBS", 'S', "ingotSteel", 'B', "ingotBrass", 'A', GTValues.CIRCUIT_ADVANCED, 'C', "componentSolenoid");
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 3, 1), " MA", "MPC", "M  ", 'M', "plateMagnalium", 'P', Ic2Items.carbonPlate, 'A', GTValues.CIRCUIT_ADVANCED, 'C', "componentSolenoid");
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 4, 1), "ICI", "FSF", 'I', GTValues.PLATE_IRIDIUM_ALLOY, 'S', GTValues.CRAFTING_SUPERCONDUCTOR, 'F', "componentFieldEmitter", 'C', "componentEVCapacitor");
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 5, 1), "SWS", "SBS", "SBS", 'S', "ingotSteel", 'W', "componentWiring", 'B', GTValues.INPUT_BATTERY_ADVANCED);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 6, 1), "TWT", "TBT", "TBT", 'T', GTValues.INGOT_TITANIUM, 'W', "componentWiring", 'B', Ic2Items.lapotronCrystal.copy());
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 7, 1), "CWC", "CBC", "CBC", 'C', GTValues.INGOT_CHROME, 'W', "componentWiring", 'B', GTItems.orbEnergy);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 8, 1), "TWT", "TBT", "TBT", 'T', "ingotTungstensteel", 'W', "componentWiring", 'B', Ic2Items.pesd.copy());
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 9, 1), "WWW", "S S", "C C", 'W', "wool", 'S', "string", 'C', Ic2Items.carbonPlate);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 10, 1), "SS", "CS", "SS", 'S', "ingotSteel", 'C', GTValues.CIRCUIT_BASIC);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 11, 1), "TT", "CT", "TT", 'T', "plateTitanium", 'C', GTValues.CIRCUIT_ADVANCED);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 12, 1), "TCT", "SES", "TCT", 'T', "plateTungstensteel", 'C', "componentSolenoid", 'S', GTValues.CRAFTING_SUPERCONDUCTOR, 'E', GTValues.CIRCUIT_MASTER);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 13, 1), "LLL", "ROS", "LCL", 'L', Ic2Items.luminator, 'R', "gemRuby", 'O', "gemOlivine", 'S', "gemSapphire", 'C', GTValues.CIRCUIT_ADVANCED);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 14, 1), "DPD", "DPD", "DPD", 'D', "dustCoal", 'P', Ic2Items.carbonPlate);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 15, 1), "WAP", "DMA", "PDW", 'W', "componentWiring", 'A', GTValues.CIRCUIT_ADVANCED, 'P', "plateElectrum", 'D', GTValues.CIRCUIT_DATA, 'M', GTValues.CIRCUIT_MASTER);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 16, 1), " M ", "PSP", "PMP", 'M', Items.MAGMA_CREAM, 'P', Ic2Items.carbonPlate, 'S', GTValues.DUST_SULFUR);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 17, 1), "MRM", "MGM", "MGM", 'M', "componentCarbonMyofiber", 'R', "itemRubber", 'G', "componentMyofiberGel");
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 18, 1), "GGG", "ICI", 'G', "glassReinforced", 'I', GTValues.PLATE_IRIDIUM_ALLOY, 'C', GTValues.CIRCUIT_MASTER);
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 19, 1), "TST", "CCC", "TST", 'T', "plateTitanium", 'S', GTValues.CRAFTING_SUPERCONDUCTOR, 'C', "componentSolenoid");
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 20, 1), "SFS", "UCU", "SFS", 'S', GTValues.CRAFTING_SUPERCONDUCTOR, 'F', "componentFieldEmitter", 'U', GTValues.CIRCUIT_ULTIMATE, 'C', "componentControlCircuit");
+        	recipes.addRecipe(GTMaterialGen.getModMetaItem("powersuits", "powerarmorcomponent", 21, 1), "RRR", "G G", "RRR", 'G', "glassReinforced", 'R', "itemRubber");
+        	recipes.addRecipe(GTMaterialGen.getModItem("powersuits", "tinkertable"), "AHA", "SES", "SCS", 'A', GTValues.CIRCUIT_ADVANCED, 'H', "componentLaserEmitter", 'S', "plateSteel", 'E', "gemEmerald", 'C', GTValues.MACHINE_ADV);
+        }
+        if (GTCXConfiguration.modcompat.compatModularPowersuitsRemoveVanillaRecipes) {
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/powerarmor_head");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/powerarmor_torso");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/powerarmor_legs");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/powerarmor_feet");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/powerarmor_fist");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_wiring");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_solenoid");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_servo");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_glider_wing");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_ion_thruster");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_lv_capacitor");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_mv_capacitor");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_hv_capacitor");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_ev_capacitor");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_parachute");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_iron_plating");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_diamond_plating");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_field_emitter");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_laser_emitter");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_carbon_myofiber");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_control_circuit");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_myofiber_gel");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_artificial_muscle");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_solar_panel");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_magnet");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_computer_chip");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/components/component_rubber_hose");
+        	GTRecipeCraftingHandler.removeRecipe("powersuits", "vanilla/tinker_table");
+        }
     }
 
     public static void addCrushedOreRecipes(GTMaterial main, ItemStack outputWashSide, ItemStack outputThermalSide){
