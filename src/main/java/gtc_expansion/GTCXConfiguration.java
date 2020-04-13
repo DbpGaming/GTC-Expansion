@@ -140,5 +140,6 @@ public class GTCXConfiguration {
 
         public boolean compatGravisuit = true;
         public boolean compatRailcraft = true;
+		public boolean compatDraconic = true;
     }
 }

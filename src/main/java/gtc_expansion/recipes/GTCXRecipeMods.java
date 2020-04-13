@@ -228,6 +228,9 @@ public class GTCXRecipeMods {
             GTCXTileWiremill.addRecipe(GTRecipeCraftingHandler.combineRecipeObjects("nuggetTungsten", "nuggetTitanium"), GTMaterialGen.getModItem("railcraft", "track_parts", 2));
             GTCXTileWiremill.addRecipe("nuggetTungstensteel", 1, GTMaterialGen.getModItem("railcraft", "track_parts", 3));
         }
+        if (GTCXConfiguration.modcompat.compatDraconic){
+        	addBlastingDustToIngot("Draconium", 1700, 72000);
+        }
     }
 
     public static void addCrushedOreRecipes(GTMaterial main, ItemStack outputWashSide, ItemStack outputThermalSide){
