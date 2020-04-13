@@ -29,8 +29,10 @@ import ic2.core.platform.registry.Ic2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import trinsdar.ic2c_extras.tileentity.TileEntityFluidCanningMachine;
 
 import static gtclassic.common.recipe.GTRecipeMods.input;
 import static gtclassic.common.recipe.GTRecipeMods.metal;
@@ -184,9 +186,21 @@ public class GTCXRecipeMods {
             GTCXTileAlloySmelter.addRecipe("dustSignalum", 1, "blockGlassHardened", 2, GTMaterialGen.getModMetaItem(GTValues.MOD_ID_THERMAL, "glass_alloy", 5, 2));
             GTCXTileAlloySmelter.addRecipe("dustLumium", 1, "blockGlassHardened", 2, GTMaterialGen.getModMetaItem(GTValues.MOD_ID_THERMAL, "glass_alloy", 6, 2));
             GTCXTileAlloySmelter.addRecipe("dustEnderium", 1, "blockGlassHardened", 2, GTMaterialGen.getModMetaItem(GTValues.MOD_ID_THERMAL, "glass_alloy", 7, 2));
+        	if(Loader.isModLoaded(GTValues.MOD_ID_IC2_EXTRAS)) {
+        		TileEntityFluidCanningMachine.addFillingRecipe(new RecipeInputItemStack(GTMaterialGen.getHotIngot(GTMaterial.Tungsten, 1)), GTMaterialGen.getFluidStack("cryotheum", 200), GTMaterialGen.getIngot(GTMaterial.Tungsten, 1));
+        		TileEntityFluidCanningMachine.addFillingRecipe(new RecipeInputItemStack(GTMaterialGen.getHotIngot(GTCXMaterial.TungstenSteel, 1)), GTMaterialGen.getFluidStack("cryotheum", 200), GTMaterialGen.getIngot(GTMaterial.Tungsten, 1));
+        		TileEntityFluidCanningMachine.addFillingRecipe(new RecipeInputItemStack(GTMaterialGen.getHotIngot(GTCXMaterial.Kanthal, 1)), GTMaterialGen.getFluidStack("cryotheum", 200), GTMaterialGen.getIngot(GTMaterial.Tungsten, 1));
+        		TileEntityFluidCanningMachine.addFillingRecipe(new RecipeInputItemStack(GTMaterialGen.getHotIngot(GTCXMaterial.Nichrome, 1)), GTMaterialGen.getFluidStack("cryotheum", 200), GTMaterialGen.getIngot(GTMaterial.Tungsten, 1));
+        		TileEntityFluidCanningMachine.addFillingRecipe(new RecipeInputItemStack(GTMaterialGen.getHotIngot(GTCXMaterial.Osmium, 1)), GTMaterialGen.getFluidStack("cryotheum", 200), GTMaterialGen.getIngot(GTMaterial.Tungsten, 1));
+        		TileEntityFluidCanningMachine.addFillingRecipe(new RecipeInputItemStack(GTMaterialGen.getHotIngot(GTMaterial.Iridium, 1)), GTMaterialGen.getFluidStack("cryotheum", 200), GTMaterialGen.getIngot(GTMaterial.Tungsten, 1));
+        	}
         }
         if (GTConfig.modcompat.compatThermal){
         	addBlastingDustToIngot("Enderium", 1700, 72000);
+        	addBlastingDustToIngot("Lumium", 1500, 72000);
+        	addBlastingDustToIngot("ElectrumFlux", 1700, 72000);
+        	addBlastingDustToIngot("Signalum", 1000, 72000);
+        	addMaceratorRecipeOredict("itemCinnabar", GTMaterialGen.getDust(GTCXMaterial.Cinnabar, 1));
         }
         if (Loader.isModLoaded("gravisuit") && GTCXConfiguration.modcompat.compatGravisuit){
             GTRecipeCraftingHandler.overrideGTRecipe("gravisuit", "shaped_item.advanceddiamondchainsaw_-416372460", GTMaterialGen.getModItem("gravisuit", "advancedchainsaw"), " SS", "SCS", "BS ", 'S', GTCXRecipe.tungstenSteel, 'C', GTCXItems.diamondChainsaw, 'B', GTItems.lithiumBattery);
@@ -228,6 +242,12 @@ public class GTCXRecipeMods {
     	ItemStack output = GTHelperStack.getStackFromOreDict("ingot" + name);
     	if (GTHelperStack.getStackFromOreDict("dust" + name) != null && output != null) {
     		GTCXTileMultiIndustrialBlastFurnace.addRecipe(new IRecipeInput[] { input("dust" + name, 1)}, heat, eu, output);
+    	}
+    }
+    
+    public static void addMaceratorRecipeOredict(String input, ItemStack output) {
+    	if (GTHelperStack.getStackFromOreDict(input) != null) {
+    		GTRecipe.maceratorUtil(input, 1, output);
     	}
     }
 
