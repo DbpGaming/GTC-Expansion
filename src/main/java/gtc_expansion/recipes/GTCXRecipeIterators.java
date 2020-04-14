@@ -334,11 +334,13 @@ public class GTCXRecipeIterators {
         }
         String stick = "stickWood";
         GTCXToolGen G = new GTCXToolGen();
-        if (GTCXConfiguration.general.enableCraftingTools){
+        if (GTCXConfiguration.general.enableCraftingTools && !gemInput){
             recipes.addRecipe(G.getPickaxe(mat), "PII", "FSH", " S ", 'P', plate, 'I', ingot, 'F', "craftingToolFile", 'H', "craftingToolForgeHammer", 'S', stick);
             recipes.addRecipe(G.getAxe(mat), "PIH", "PS ", "FS ", 'P', plate, 'I', ingot, 'F', "craftingToolFile", 'H', "craftingToolForgeHammer", 'S', stick);
             recipes.addRecipe(G.getShovel(mat), "FPH", " S ", " S ", 'P', plate, 'F', "craftingToolFile", 'H', "craftingToolForgeHammer", 'S', stick);
             recipes.addRecipe(G.getSword(mat), " P ", "FPH", " S ", 'P', plate, 'F', "craftingToolFile", 'H', "craftingToolForgeHammer", 'S', stick);
+            recipes.addRecipe(G.getFile(mat), "P", "P", "S", 'P', plate, 'S', stick);
+            recipes.addRecipe(G.getWrench(mat), "I I", "III", " I ", 'I', ingot);
         } else {
             recipes.addRecipe(G.getPickaxe(mat), "PII", " S ", " S ", 'P', plate, 'I', ingot, 'S', stick);
             recipes.addRecipe(G.getAxe(mat), "PI", "PS", " S", 'P', plate, 'I', ingot, 'S', stick);
@@ -346,10 +348,6 @@ public class GTCXRecipeIterators {
             recipes.addRecipe(G.getSword(mat), "P", "P", "S", 'P', plate, 'S', stick);
         }
         if (!gemInput){
-            if (GTCXConfiguration.general.enableCraftingTools){
-                recipes.addRecipe(G.getFile(mat), "P", "P", "S", 'P', plate, 'S', stick);
-                recipes.addRecipe(G.getWrench(mat), "I I", "III", " I ", 'I', ingot);
-            }
             recipes.addRecipe(G.getHammer(mat), "III", "III", " S ", 'I', ingot, 'S', stick);
         }
     }
